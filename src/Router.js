@@ -8,6 +8,7 @@ import User from "./pages/User";
 import React, { createContext, useEffect, useState, useContext } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import useAuth from "./useAuth";
+import SpotifyWebApi from "spotify-web-api-node";
 
 function Callback() {
   const code = new URLSearchParams(window.location.search).get("code");
@@ -21,6 +22,12 @@ function Callback() {
 }
 
 export const accessTokenContext = createContext(null);
+
+export const spotifyApi = new SpotifyWebApi({
+  clientId: "f5ed848b465b4d0493abd385f2729186",
+  clientSecret: "68dbc0d503524af684bd7e2967422070",
+  redirectUri: "http://localhost:3000",
+})
 
 export default function Router() {
   let [accessToken, setAccessToken] = useState(null);

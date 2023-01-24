@@ -1,0 +1,16 @@
+project:
+	move NavBar one level up
+	maybe put the constant SpotifyWebApi Object in a standalone file
+	eslint the whole project
+	maybe change the way the auth hook works
+	page doesnt work on reload
+	get users recently played track (yes)
+	change parameters on top tracks and artists (if possible)
+
+vscode:
+	open spilt
+	move between splits
+
+general:
+	figure out how to do proper todos
+
