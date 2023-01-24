@@ -13,7 +13,7 @@ export default function TopGenres() {
 
   useEffect(() => {
     if(!accessToken) return;
-    spotifyApi.getAvailableGenreSeeds().then(data => {
+    spotifyApi.getMyRecentlyPlayedTracks().then(data => {
       setGenreSeeds(data);
       console.log(genreSeeds);
     });
