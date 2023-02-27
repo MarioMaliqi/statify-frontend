@@ -6,10 +6,7 @@ project:
 	page doesnt work on reload
 	get users recently played track (yes)
 	change parameters on top tracks and artists (if possible)
-
-vscode:
-	open spilt
-	move between splits
+	potential database???
 
 general:
 	figure out how to do proper todos

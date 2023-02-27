@@ -16,7 +16,7 @@ export default function TopTracks() {
     spotifyApi.getMyTopTracks().then(data => {
       setTopTracks(data.body.items);
     });
-  }, [accessToken])
+  }, [accessToken]);
 
   return (
     <>
