@@ -16,8 +16,8 @@ export default function RecentlyPlayed() {
       limit: 20
     }).then((data) => {
       setRecentlyPlayedTracks(data.body.items);
+      console.log(data.body.items);
     }, (err) => {
-      console.log('Something went wrong!', err);
     });
   }, [accessToken]);
 
@@ -25,9 +25,13 @@ export default function RecentlyPlayed() {
     <>
       <NavBar accessToken={accessToken} spotifyApi={spotifyApi}/>
       <ul>
-        {
-
-        }
+        {recentlyPlayedTracks.map((track) => {
+            return ( 
+              <li key={track.track.name}>
+                {track.track.name}
+              </li>
+            );
+        })}
       </ul>
     </>
   );

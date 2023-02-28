@@ -9,7 +9,6 @@ export default function TopArtists() {
   useEffect(() => {
     if(!accessToken) return;
     spotifyApi.setAccessToken(accessToken);
-    console.log("yo");
   }, [accessToken]);
 
   useEffect(() => {
@@ -17,7 +16,6 @@ export default function TopArtists() {
     spotifyApi.getMyTopArtists().then(data => {
       setTopArtists(data.body.items);
     });
-    console.log("wuzzup");
   }, [accessToken]);
 
   return (

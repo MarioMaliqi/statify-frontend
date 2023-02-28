@@ -1,6 +1,15 @@
+import { useContext, useEffect, useState } from "react";
+import NavBar from "../NavBar";
+import { accessTokenContext, spotifyApi } from "../Router";
+
 export default function Recommendations() {
-  return(
-    <div>
-    </div>
-  );
+  let accessToken = useContext(accessTokenContext)[0];
+
+  return (
+    <>
+     <div>
+      yoyo
+     </div>
+    </>
+  )
 }
