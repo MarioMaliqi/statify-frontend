@@ -26,10 +26,12 @@ export default function TopTracks() {
           console.log(track);
             return ( 
               <li key={track.name}>
-                {track.name}
                 <img alt="" src={track.album.images[2].url}>
                 </img>
+                {track.name}
+                <br></br>
               </li>
+              
             );
         })}
      </ul>

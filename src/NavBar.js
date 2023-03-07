@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Outlet, Link } from "react-router-dom";
+import logo from'./transparent-green.png'
 
 export default function NavBar({ accessToken, spotifyApi }) {
   let [profilePicture, setProfilePicture] = useState("");
@@ -26,34 +27,30 @@ export default function NavBar({ accessToken, spotifyApi }) {
 
   return (
     <>
-      <nav>
-        <ul className="flex">
-          <li className="mr-6">
-            <Link to="/toptracks">Top Tracks</Link>
-          </li>
-          <li className="mr-6">
-            <Link to="/topartists">Top Artists</Link>
-          </li>
-          <li className="mr-6">
-            <Link to="/topgenres">Top Genres</Link>
-          </li>
-          <li className="mr-6">
-            <Link to="/recentlyplayed">Recently Played</Link>
-          </li>
-          <li className="mr-6">
-            <Link to="/recommendations">Recommendations</Link>
-          </li>
-          <li className="mr-6">
-            <a className="text-gray-400 cursor-not-allowed" href="/#">
-              <span>
-                {userName}
-              </span>
-              <img src={profilePicture}>
-              </img>
-            </a>
-          </li>
-        </ul>
-      </nav>
+     <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <img src={logo} width="60" height="60" class="d-inline-block align-top" alt=""></img>
+          <a className="navbar-brand" href="#">Statify</a>
+          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon"></span>
+    </button>
+
+  <div className="collapse navbar-collapse" id="navbarNav">
+    <ul className="navbar-nav">
+      <li className="nav-item">
+         <Link className="nav-link" to="/toptracks">Top Tracks</Link>
+      </li>
+      <li className="nav-item">
+        <Link className="nav-link" to="/topartists">Top Artists</Link>
+      </li>
+      <li className="nav-item">
+        <Link className="nav-link" to="/recentlyplayed">Recently Played</Link>
+      </li>
+      <li className="nav-item">
+        <Link className="nav-link" to="/recommendations">Recommendations</Link>
+      </li>
+    </ul>
+  </div>
+</nav>
 
       <Outlet />
     </>

@@ -26,9 +26,9 @@ export default function TopArtists() {
             console.log(artist);
             return ( 
               <li key={artist.name}>
-                {artist.name}
                 <img alt="" src={artist.images[2].url}>
                 </img>
+                {artist.name}
               </li>
             );
         })}
