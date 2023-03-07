@@ -9,13 +9,8 @@ const AUTH_URL =
 
 export default function Login() {
   return (
-    
-    <div className="container-fluid"> 
-      <div className="d-flex align-items-center">
-        <div className="col text-center"> 
-          <a className="btn btn-outline-success " href={AUTH_URL}>Login With Spotify</a>
-        </div>
-      </div>
-    </div> 
+    <div className="d-flex align-items-center justify-content-center" style={{height: "100%"}}>
+      <a className="btn btn-outline-success " href={AUTH_URL}>Login With Spotify</a>
+    </div>
   );
 }

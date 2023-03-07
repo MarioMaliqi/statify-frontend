@@ -36,7 +36,7 @@ export default function Router() {
       <BrowserRouter>
         <accessTokenContext.Provider value={[accessToken, setAccessToken]}>
           <Routes>
-            <Route path="/" element={<Login />}>
+            <Route path="/" element={<Login/>}>
             </Route>
             <Route path="/callback" element={<Callback />}>
             </Route>

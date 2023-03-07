@@ -8,7 +8,6 @@ export default function Recommendations() {
   return (
     <>
      <div>
-      yoyo
      </div>
     </>
   )
