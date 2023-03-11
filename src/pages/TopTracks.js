@@ -13,7 +13,10 @@ export default function TopTracks() {
 
   useEffect(() => {
     if(!accessToken) return;
-    spotifyApi.getMyTopTracks().then(data => {
+    spotifyApi.getMyTopTracks({
+      limit: 50,
+      time_range: "long_term"
+    }).then(data => {
       setTopTracks(data.body.items);
     });
   }, [accessToken]);

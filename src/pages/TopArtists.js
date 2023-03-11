@@ -13,7 +13,10 @@ export default function TopArtists() {
 
   useEffect(() => {
     if(!accessToken) return;
-    spotifyApi.getMyTopArtists().then(data => {
+    spotifyApi.getMyTopArtists({
+      limit: 50,
+      time_range: "long_term"
+    }).then(data => {
       setTopArtists(data.body.items);
     });
   }, [accessToken]);

@@ -13,11 +13,11 @@ export default function RecentlyPlayed() {
 
   useEffect(() => {
     spotifyApi.getMyRecentlyPlayedTracks({
-      limit: 20
+      limit: 50,
+      after: 0
     }).then((data) => {
       setRecentlyPlayedTracks(data.body.items);
       console.log(data.body.items);
-    }, (err) => {
     });
   }, [accessToken]);
 
