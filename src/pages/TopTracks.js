@@ -7,6 +7,10 @@ export default function TopTracks() {
   let accessToken = useContext(accessTokenContext)[0];
 
   useEffect(() => {
+    document.body.style.backgroundColor = "#131516";
+  });
+  
+  useEffect(() => {
     if(!accessToken) return;
     spotifyApi.setAccessToken(accessToken);
   }, [accessToken]);
@@ -21,6 +25,8 @@ export default function TopTracks() {
     });
   }, [accessToken]);
 
+  
+
   return (
     <>
       <NavBar accessToken={accessToken} spotifyApi={spotifyApi}/>
@@ -28,16 +34,15 @@ export default function TopTracks() {
         {topTracks.map((track) => {
           console.log(track);
             return ( 
-              <li key={track.name}>
+              <li key={track.name} style={{color: "#FFFFFF"}}>
                 <img alt="" src={track.album.images[2].url}>
                 </img>
-                {track.name}
+                  {track.name}
                 <br></br>
               </li>
-              
             );
         })}
-     </ul>
+      </ul> 
     </>
   )
 }

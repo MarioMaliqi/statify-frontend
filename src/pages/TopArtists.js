@@ -28,14 +28,14 @@ export default function TopArtists() {
         {topArtists.map((artist) => {
             console.log(artist);
             return ( 
-              <li key={artist.name}>
+              <li key={artist.name} style={{color: "#FFFFFF"}}>
                 <img alt="" src={artist.images[2].url}>
                 </img>
                 {artist.name}
               </li>
             );
         })}
-     </ul>
+      </ul> 
     </>
   )
 }

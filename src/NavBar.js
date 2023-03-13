@@ -25,9 +25,10 @@ export default function NavBar({ accessToken, spotifyApi }) {
     })
   }, [accessToken])
 
+
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg navbar-dark" >
         <img src={logo} width="60" height="60" class="d-inline-block align-top" alt=""></img>
         <a className="navbar-brand" href="#">Statify</a>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,16 +37,16 @@ export default function NavBar({ accessToken, spotifyApi }) {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link className="nav-link" to="/toptracks">Top Tracks</Link>
+              <Link className={"nav-link " + (window.location.pathname === "/toptracks" ? "active" : "")} to="/toptracks">Top Tracks</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/topartists">Top Artists</Link>
+              <Link className={"nav-link " + (window.location.pathname === "/topartists" ? "active" : "")} to="/topartists">Top Artists</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/recentlyplayed">Recently Played</Link>
+              <Link className={"nav-link " + (window.location.pathname === "/recentlyplayed" ? "active" : "")} to="/recentlyplayed">Recently Played</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/recommendations">Recommendations</Link>
+              <Link className={"nav-link " + (window.location.pathname === "/recommendations" ? "active" : "")} to="/recommendations">Recommendations</Link>
             </li>
           </ul>
         </div>

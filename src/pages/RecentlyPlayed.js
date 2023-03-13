@@ -27,7 +27,7 @@ export default function RecentlyPlayed() {
       <ul>
         {recentlyPlayedTracks.map((track) => {
             return ( 
-              <li key={track.track.name}>
+              <li key={track.track.name} style={{color: "#FFFFFF"}}>
                 {track.track.name}
               </li>
             );
