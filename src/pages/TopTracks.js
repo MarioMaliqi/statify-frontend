@@ -30,19 +30,20 @@ export default function TopTracks() {
   return (
     <>
       <NavBar accessToken={accessToken} spotifyApi={spotifyApi}/>
-      <ul>
+      <ol>
         {topTracks.map((track) => {
           console.log(track);
             return ( 
-              <li key={track.name} style={{color: "#FFFFFF"}}>
+              <li className="mt-3" key={track.name} style={{color: "#FFFFFF"}}>
                 <img alt="" src={track.album.images[2].url}>
                 </img>
-                  {track.name}
-                <br></br>
+                <p className="ml-5">
+                  {track.name} 
+                </p> 
               </li>
             );
         })}
-      </ul> 
+      </ol> 
     </>
   )
 }

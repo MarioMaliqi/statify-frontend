@@ -25,10 +25,13 @@ export default function RecentlyPlayed() {
     <>
       <NavBar accessToken={accessToken} spotifyApi={spotifyApi}/>
       <ul>
-        {recentlyPlayedTracks.map((track) => {
+        {recentlyPlayedTracks.map((recent) => {
             return ( 
-              <li key={track.track.name} style={{color: "#FFFFFF"}}>
-                {track.track.name}
+              <li className="mt-2"key={recent.track.name} style={{color: "#FFFFFF"}}>
+                {recent.track.name}
+              <ul>
+              </ul>
+                {recent.played_at}
               </li>
             );
         })}

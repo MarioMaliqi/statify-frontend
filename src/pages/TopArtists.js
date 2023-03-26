@@ -24,18 +24,20 @@ export default function TopArtists() {
   return (
     <>
       <NavBar accessToken={accessToken} spotifyApi={spotifyApi}/>
-      <ul>
+      <ol>
         {topArtists.map((artist) => {
             console.log(artist);
             return ( 
-              <li key={artist.name} style={{color: "#FFFFFF"}}>
-                <img alt="" src={artist.images[2].url}>
+              <li className="mt-2" key={artist.name} style={{color: "#FFFFFF"}}>
+                <img alt="" src={artist.images[2].url} width="95" height="95">
                 </img>
-                {artist.name}
+                <p>
+                  {artist.name}
+                </p>
               </li>
             );
         })}
-      </ul> 
+      </ol> 
     </>
   )
 }

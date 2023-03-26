@@ -1,10 +1,10 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, } from "react";
 import NavBar from "../NavBar";
 import { accessTokenContext, spotifyApi } from "../Router";
 
 export default function Recommendations() {
   let accessToken = useContext(accessTokenContext)[0];
-  let [genreSeeds, setGenreSeeds] = useState([]);
+  // let [genreSeeds, setGenreSeeds] = useState([]);
   
   useEffect(() => {
     if(!accessToken) return;
@@ -13,7 +13,7 @@ export default function Recommendations() {
 
   useEffect(() => {
     spotifyApi.getAvailableGenreSeeds().then(data => {
-      setGenreSeeds(data.body.genres);
+      // setGenreSeeds(data.body.genres);
     });
   }, [accessToken]);
 

@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, } from "react";
 import { Outlet, Link } from "react-router-dom";
 import logo from'./transparent-green.png'
 
 export default function NavBar({ accessToken, spotifyApi }) {
-  let [profilePicture, setProfilePicture] = useState("");
-  let [userName, setUserName] = useState("");
+  // let [profilePicture, setProfilePicture] = useState("");
+  // let [userName, setUserName] = useState("");
 
   useEffect(() =>  {
     if (!accessToken) return;
@@ -14,14 +14,14 @@ export default function NavBar({ accessToken, spotifyApi }) {
   useEffect(() => { 
     if(!accessToken) return;
     spotifyApi.getMe().then((data) => {
-      setProfilePicture(data.body.images[0].url);
+      //setProfilePicture(data.body.images[0].url);
     });
   }, [accessToken]);
 
   useEffect(() => {
     if(!accessToken) return;
     spotifyApi.getMe().then((data) => {
-      setUserName(data.body.display_name);
+      // setUserName(data.body.display_name);
     })
   }, [accessToken])
 
